@@ -69,10 +69,10 @@ architecture behav of led_controller is
 			HEX2 <= CLEARED_HEX;
 			HEX3 <= CLEARED_HEX;
 		elsif(rising_edge(CLOCK)) then
-			HEX0 <= (convert_to_7(I_VALUE rem 10));
-			HEX1 <= (convert_to_7((I_VALUE / 10) rem 10));
-			HEX2 <= (convert_to_7((I_VALUE / 100) rem 10));
-			HEX3 <= (convert_to_7(I_VALUE / 1000));
+			HEX0 <= (convert(I_VALUE rem 10));
+			HEX1 <= (convert((I_VALUE / 10) rem 10));
+			HEX2 <= (convert((I_VALUE / 100) rem 10));
+			HEX3 <= (convert(I_VALUE / 1000));
 		end if;
 	end process;
 end architecture;
